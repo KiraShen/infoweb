@@ -1,0 +1,201 @@
+{include file="public/header"/}
+
+  <link rel="stylesheet" href="__CSS__/about.min.css" />
+  <link rel="stylesheet" href="__CSS__/solution.min.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="__CSS__/console.css"> -->
+  <div class="layout">
+    {include file="public/nav"/}
+    {include file="public/mnav"/}
+  </div>
+
+
+
+    <!--===========layout-container================-->
+    <div class="layout-container">
+      <div class="page-header">
+        <div class="am-container">
+          <h1 class="page-header-title">ABOUT US</h1>
+        </div>
+      </div>
+      <div class="breadcrumb-box">
+        <div class="am-container">
+          <ol class="am-breadcrumb">
+            <li><a href="../index.html">首页</a></li>
+            <li class="am-active">关于我们</li>
+          </ol>
+        </div>
+      </div>
+      
+    </div>
+
+  <div class="section">
+      <div class="container">
+        <div class="section--header">
+          <h2 class="section--title">领导核心</h2>
+          <p class="section--description">
+            这是领导
+            <br>哦，领导
+          </p>
+        </div>
+
+        <!--about-container start-->
+
+        {volist name="leader_list" id="item" }
+        <div class="about-container">
+          <div class="am-g">
+            <div class="am-u-md-6">
+              <div class="our-company-text">
+                <h3>{$item.title}</h3>
+                <p>
+                  {$item.brief}
+                </p>
+                
+              </div>
+            </div>
+
+            <div class="am-u-md-6">
+              <div class="our-company-quote">
+                <div class="am-g">
+                  <div class="am-u-md-6">
+                    <div class="our-company-img">
+                      <img src="{$item.image}" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="am-u-md-6">
+                    <p class="our-company-brief">
+                      {$item.message}
+                    </p>
+                    <div class="our-company-quote_author"><strong>{$item.name}</strong><span>{$item.position}</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        {/volist}
+
+     
+        <!--about-container end-->
+      </div>
+    </div>
+
+
+
+  <div class="layout-container">
+      
+      <div class="solution-page">
+        <div class="container">
+          <h2>浙江弗达洲电子商务有限公司·简介</h2>
+          <p>{$about[0]['brief']}<a href="/abouta">全文</a></p>
+          <!-- <p>{$fkey[0]['aboutus']}</p> -->
+          <!-- <button type="button" class="am-btn am-btn-secondary am-round">了解更多</button> -->
+        </div>
+      </div>
+
+    </div>
+
+<div class="section" style="padding: 0;">
+     
+
+      <div class="product1-show-container" style="padding: 0;">
+        <!-- <ul data-am-widget="gallery" class="am-gallery 
+  am-avg-md-5 am-avg-sm-2 am-gallery-default" data-am-gallery="{ pureview: true }" style="max-width: 100%;">
+         -->
+        <ul data-am-widget="gallery" class="am-gallery am-avg-md-5 am-avg-sm-2" data-am-gallery="{ pureview: true }" style="padding: 0; width: auto;height: auto;">
+
+        {volist name="image_list" id="item" }
+          <li><div class="product-img-box"></div><img src="{$item.image}" style="max-width: 100%;height: 260px;" alt=""></li>
+        {/volist}
+          
+        </ul>
+      </div>
+    </div>
+    <!-- 
+    <hr class="section_divider -narrow"> -->
+
+
+
+
+
+
+<!--     <div class="section" style="margin-top:0px;background-image: url('__IMG__/pattern-light.png');">
+      <div class="container">
+        <div class="section--header">
+          <h2 class="section--title">我们的团队</h2>
+          <p class="section--description">
+            我们团队很nb
+          </p>
+        </div>
+
+        <div class="about-container">
+          <div class="our-team">
+            <div class="am-g">
+
+        {volist name="team_list" id="item" }
+              <div class="am-u-md-3">
+                <div class="team-box">
+                  <div class="our-team-img">
+                    <img style="max-width: 100%;height: 233px;" src="{$item.image}" alt="" />
+                  </div>
+                  <div class="team_member--body">
+										<h3 class="team_member--name">{$item.name}</h3>
+										<span class="team_member--position">{$item.position}</span>
+										<span class="team_member--email">
+											{$item.email}
+										</span>
+										
+									</div>
+                </div>
+            </div>
+            {/volist}
+            
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<!-- 
+  <div class="section">
+    <div class="container">
+      <div class="section--header">
+        <h2 class="section--title">领导寄语</h2>
+        <p class="section--description">
+          金龙集团为一家微型跨国企业，在全球有50家工厂，办公人员有近5000人，移动信息化选型之路是摸着石头过河，最终采用了云适配的整体解决方案，在移动端也有了像PC端一样的统一办公门户
+        </p>
+      </div>
+
+      <div class="about-container">
+        <div class="our-customer-say">
+          <div class="am-g">
+
+        {volist name="word_list" id="item" }
+            <div class="am-u-md-4">
+              <div class="our-customer-say-box">
+                <div class="our-customer-say-content">
+                  <p>{$item.word}</p>
+                </div>
+                <div class="our-customer-say-title">
+                  <figure>
+                    <img src="{$item.image}" alt="">
+                  </figure>
+                  <strong>{$item.position}</strong>
+                  <span>{$item.name}</span>
+                </div>
+              </div>
+            </div>
+          {/volist}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ -->
+{include file="public/footer"/}
+
+

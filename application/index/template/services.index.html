@@ -1,0 +1,97 @@
+{include file="public/header"/}
+
+  <link rel="stylesheet" href="__CSS__/product.min.css" />
+  <div class="layout">
+    {include file="public/nav"/}
+    {include file="public/mnav"/}
+  </div>
+
+
+
+    <div class="layout-container">
+      <div class="page-header">
+        <div class="am-container">
+          <h1 class="page-header-title">PRODUCTS</h1>
+        </div>
+      </div>
+
+      <div class="breadcrumb-box">
+        <div class="am-container">
+          <ol class="am-breadcrumb">
+            <li><a href="/index.html">首页</a></li>
+            <li class="am-active">产品中心</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="container">
+        <!-- <div class="section--header">
+          <h2 class="section--title">核心产品</h2>
+          <p class="section--description">
+            嗯，产品中心<br>这是产品中心
+          </p>
+        </div> -->
+
+        <div style="padding: 0px 0;" class="product2-main">
+          <div class="am-g">
+            {volist name="data_list" id="item"}
+            <div style="text-align: center;" class="am-u-md-4 am-u-sm-6">
+              <img src="{$item.image}" alt="" />
+              <h3>{$item.title}</h3>
+              <p>
+                {$item.brief}
+              </p>
+              <a href="/product-{$item.id}">了解更多</a>
+            </div>
+            {/volist}
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- 
+    <div class="section">
+      <div class="container">
+        <div class="section--header">
+          <h2 class="section--title">产品服务</h2>
+          <p class="section--description">
+            产品服务，嗯服务
+          </p>
+        </div>
+      </div>
+
+      <div class="product3-show-container">
+        <div class="container">
+          <div class="am-g">
+          {volist name="cms_list" id="item"}
+            <div class="am-u-md-6 product3-show-box">
+              <div class="am-g">
+                <div class="am-u-md-6">
+                  <div class="product3-show-img">
+                    <a href="/services-{$item.id}"><img style="max-width: 100%;height: 271px;" src="{$item.image}" alt="" /></a>
+                  </div>
+                </div>
+                <div class="am-u-md-6">
+                <a href="/services-{$item.id}">
+                  <div class="product3-show-content">
+                    <h3>{$item.title}</h3>
+                    <p>{$item.brief}</p>
+                  </div>
+                </a>
+                </div>
+              </div>
+            </div>
+          {/volist}
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+ -->
+
+
+{include file="public/footer"/}

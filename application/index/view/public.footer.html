@@ -1,0 +1,55 @@
+<div class="footer wow fadeInUp">
+    <div class="rowFluid">
+        <div class="span12">
+            <div class="container">
+                <div class="footer_content">
+                    <div class="span4 col-xm-12">
+                        <div class="footer_list">
+                            <div class="span6">
+                                <div class="bottom_logo"><p style="color: #D9D9DA;font-size: 16px;">关注我们</p>这是二维码</div>
+                            </div>
+                            <div class="span6 col-xm-12">
+                                <div class="quick_navigation">
+                                    <div class="quick_navigation_title">快速导航</div>
+                                    <ul>
+                                        {volist name="nav_list" id="nav"}
+                                        <li><a href="{$nav.url}" title="{$nav.title}">{$nav.title}</a></li>
+                                        {/volist}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4 col-xm-6 col-xs-12">
+                        <div class="footer_list">
+                            <div class="footer_link">
+                                <div class="footer_link_title">友情链接</div>
+                                <ul id="frientLinks">
+                                    {volist name="link_list" id="item"}
+                                    <li><a href='{$item.url}' title='{$item.title}' target='_blank'>{$item.title}</a> </li>
+                                    {/volist}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4 col-xm-6 col-xs-12">
+                        <div class="footer_list">
+                            <div class="footer_cotact">
+                                <div class="footer_cotact_title">联系方式</div>
+                                <ul>
+                                    <li><span class="footer_cotact_type">地址：</span><span class="footer_cotact_content"><a href="http://j.map.baidu.com/dZ3N3" target="_blank">{:sysconf('company_address')}</a></span></li>
+                                    <li><span class="footer_cotact_type">电话：</span><span class="footer_cotact_content"><a href="tel:{:sysconf('company_phone')}" class="call">{:sysconf('company_phone')}</a></span></li>
+                                    <li><span class="footer_cotact_type">固话：</span><span class="footer_cotact_content"><a href="tel:{:sysconf('company_fixed_line')}" class="call">{:sysconf('company_fixed_line')}</a></span></li>
+                                    <li><span class="footer_cotact_type">ＱＱ：</span><span class="footer_cotact_content"><a href="#" class="call">{:sysconf('company_qq')}</a></span></li>
+                                    <li><span class="footer_cotact_type">网址：</span><span class="footer_cotact_content"><a href="{:sysconf('company_url')}" title="官网">{:sysconf('company_url')}</a></span></li>
+                                    <li><span class="footer_cotact_type">邮箱：</span><span class="footer_cotact_content">{:sysconf('company_email')}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">Copyright &#169; 2017-2020 <a href="{:sysconf('company_url')}" title="深圳网站建设,深圳网站定制,深圳商城开发,深圳电商网站,深圳响应式网站建设,深圳HTML5网站建设,深圳营销型网站建设" target="_blank">{:sysconf('company_url')}</a> <a href="{:sysconf('company_url')}" title="{:sysconf('company_url')}" alt="深圳网站建设,深圳网站定制,深圳商城开发,深圳电商网站,深圳响应式网站建设,深圳HTML5网站建设,深圳营销型网站建设" target="_blank">93网</a> 版权所有  <a href="{:sysconf('company_url')}" target="_blank" title="{:sysconf('seo_title')}">{:sysconf('web_site_icp')}</a> </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+{include file="public/header"/}
+
+<link rel="stylesheet" type="text/css" href="__CSS__/amaze/css/amazeui.css" />
+
+<link rel="stylesheet" type="text/css" href="__CSS__/style.css" />
+<div class="header">
+    <div class="rowFluid">
+        <div class="span2 col-md-12">
+            <div class="logo">
+                <a href="/" title="返回首页">
+                    <img src="__IMG__/logo.png" alt="深圳网站建设公司_深圳网站设计_深圳网站制作_深圳免费网站制作" /></a>
+            </div>
+        </div>
+        {include file="public/nav"/}
+        <div class="span2">
+
+            <div class="login" id="_userlogin">
+                <li class="toptel" style="margin-right:0px;">
+                    <img src="__IMG__/dongtaitel.gif">
+                    <img src="__IMG__/top-tel.png">
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page">
+    <div class="rowFluid">
+        <div class="span12">
+            <div class="main">
+
+                <div class="z_banner support_z_banner">
+                    <div class="rowFluid">
+                        <div class="span12">
+                            <div class="container">
+                                <h3 class="z_banner_title">新闻中心</h3>
+                                <div class="z_banner_text"> 这里有您想知道的最新资讯与动态 </div>
+                            </div>
+                            <ul class="platform_advantage_bg_z">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="support_type">
+                    <div class="rowFluid">
+                        <div class="span12">
+                            <div class="container">
+                                <div class="support_type_content">
+                                    <div class="kzf-mod-center">
+                                        {volist name="article_cate" id="item"}
+                                        <div class="span2 col-xs-4"> <a href="{$item.url}" class="support_type_list normal {if $type eq $item.id} active{/if}" title="平台动态">{$item.name}</a> </div>
+                                        {/volist}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="kzf-mod-new-container">
+                    <div class="rowFluid">
+                        <div class="span12">
+                            <div class="container" id="newslist">
+                                {volist name="article_list" id="item"}
+                                <div class="rowFluid">
+                                    <a href="{$item.url}">
+                                        <div class="kzf-mod-new-li">
+                                            <div class="span2">
+                                                <div class="kzf-mod-new-time-box">
+                                                    <div class="kzf-mod-new-time-date"><span>{$item.create_at|date="m",###}</span>/<span>{$item.create_at|date="d",###}</span></div>
+                                                    <div class="kzf-mod-new-time-year">{$item.create_at|date="Y",###}</div>
+                                                </div>
+                                            </div>
+                                            <div class="span10">
+                                                <div class="kzf-mod-new-box">
+                                                    <div class="kzf-mod-new-title">{$item.title}</div>
+                                                    <div class="kzf-mod-new-text"> {$item.brief}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                {/volist}
+                             
+                            <div style="text-align: center;" id="pages">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="__PUBLIC__/static/plugs/layui/css/layui.css?ver={:date('ymd')}"/>
+<script src="__PUBLIC__/static/plugs/layui/layui.js?ver={:date('ymd')}"></script>
+<script>
+    layui.use(['laypage', 'layer'], function(){
+        var laypage = layui.laypage,layer = layui.layer;
+        laypage({
+            cont: 'pages',
+            skin: '#AF0000',
+            skip: true, //是否开启跳页
+            pages: {$allpage}, //可以叫服务端把总页数放在某一个隐藏域，再获取。假设我们获取到的是18
+            curr: function(){ //通过url获取当前页，也可以同上（pages）方式获取
+                var page = location.search.match(/page=(\d+)/);
+                return page ? page[1] : 1;
+            }(),
+            jump: function(e, first){ //触发分页后的回调
+                if(!first){ //一定要加此判断，否则初始时会无限刷新
+                    location.href = '?page='+e.curr;
+                }
+            }
+        });
+    });
+</script>
+    {include file="public/footer"/}
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
+

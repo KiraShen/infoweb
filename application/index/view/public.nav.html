@@ -1,0 +1,21 @@
+<div class="span8">
+    <div class="mobileMenuBtn"><span class="span1"></span><span class="span2"></span><span class="span3"></span></div>
+    <div class="mobileMenuBtn_shad"></div>
+    <div class="header_menu">
+        <ul id="menu">
+            {volist name="nav_list" id="nav" }
+                <li><a {if $nav.controller_name eq $controller_name}class="active"{/if} href="{$nav.url}" title="{$nav.title}">{$nav.title}</a></li>
+            {/volist}
+        </ul>
+    </div>
+</div>
+
+<script>
+    var curr_url = window.location.href;  //获取当前URL
+    $('#menu li a').each(function(i,n){  //循环导航的a标签
+        var href = $(this).attr('href'); //a标签中的href链接
+        if(href == curr_url){  //如果当前URL,和a标签中的href相等。
+            $(this).addClass('active');  //那么就给这个a标签增加home_page类。
+        }
+    })
+</script>
